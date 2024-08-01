@@ -2,13 +2,13 @@ package com.company.recruitment.wanted_pre_onboarding_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Entity
 public class Application {
-    //pr 제출용(?) 주석
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,11 +21,7 @@ public class Application {
     @JoinColumn(name = "job_posting_id", nullable = false)
     private JobPosting jobPosting;
 
+    @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime applicationDate;
-
-    @PrePersist
-    protected void onCreate() {
-        this.applicationDate = LocalDateTime.now();
-    }
 }

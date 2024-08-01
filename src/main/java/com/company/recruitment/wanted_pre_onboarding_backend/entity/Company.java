@@ -8,7 +8,6 @@ import java.util.List;
 @Getter
 @Entity
 public class Company {
-    //pr 제출용(?) 주석
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
