@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 public class Application {
+    //pr 제출용(?) 주석
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

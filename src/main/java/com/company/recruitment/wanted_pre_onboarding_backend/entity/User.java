@@ -5,13 +5,16 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Entity
 public class User {
+    // 유저 아이디의 보안을 위해서 UUID 사용, mysql과 호환을 위해 columnDefinition을 CHAR(36)으로 해줌
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    @Column(updatable = false, nullable = false, columnDefinition = "CHAR(36)")
+    private UUID id;
 
     @Column(nullable = false)
     private String nickname;

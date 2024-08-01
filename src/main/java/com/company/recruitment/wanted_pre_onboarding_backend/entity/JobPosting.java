@@ -9,6 +9,7 @@ import java.util.List;
 @Getter
 @Entity
 public class JobPosting {
+    //pr 제출용(?) 주석
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
