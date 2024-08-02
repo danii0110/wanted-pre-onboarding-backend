@@ -7,8 +7,9 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class UserDTO {
+public class CompanyDTO {
     private UUID id;
-    private String nickname;
-    private String email;
+    private String name;
+    private String country;
+    private String region;
 }

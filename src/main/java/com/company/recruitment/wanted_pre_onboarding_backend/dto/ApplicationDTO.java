@@ -3,12 +3,14 @@ package com.company.recruitment.wanted_pre_onboarding_backend.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
 @Setter
-public class UserDTO {
+public class ApplicationDTO {
     private UUID id;
-    private String nickname;
-    private String email;
+    private UUID userId;
+    private UUID jobPostingId;
+    private LocalDateTime applicationDate;
 }

@@ -1,14 +1,17 @@
 spring:
+  application:
+    name: wanted-pre-onboarding-backend
+  sql:
+    init:
+      mode: always
   datasource:
-    url: jdbc:mysql://localhost:3306/recruitment_db?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/recruitment_db
     username: root
-    password: "godaehak21"
+    password: "@godaehak21"
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-        id:
-          new_generator_mappings: true
+    defer-datasource-initialization: true

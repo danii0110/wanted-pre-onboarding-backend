@@ -2,15 +2,19 @@ package com.company.recruitment.wanted_pre_onboarding_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
+@NoArgsConstructor
 @Entity
 public class Company {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    @Column(updatable = false, nullable = false, columnDefinition = "CHAR(36)")
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
@@ -23,4 +27,10 @@ public class Company {
 
     @OneToMany(mappedBy = "company")
     private List<JobPosting> jobPostings;
+
+    public Company(String name, String country, String region) {
+        this.name = name;
+        this.country = country;
+        this.region = region;
+    }
 }
